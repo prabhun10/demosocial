@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Tuition Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4a90e2;       /* Professional Blue */
+            --secondary: #2c3e50;     /* Dark Blue/Grey */
+            --accent: #ff6b6b;        /* Attention Grabbing Red/Pink */
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        /* --- Hero Section --- */
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 1rem;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        /* --- Container --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Section Styling --- */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* --- Social & Links Grid --- */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .link-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--secondary);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, border 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .link-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .link-card.instagram i { color: #E1306C; }
+		.link-card.whatsapp i { color: #25d366; }
+        .link-card.facebook i { color: #1877F2; }
+		.link-card.googlemap i { color:red;  }
+        .link-card.website i { color: var(--primary); }
+
+        .link-card h3 { font-size: 1.2rem; }
+
+        /* --- Embed Containers (Maps & Forms) --- */
+        .embed-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        /* Responsive Iframe Wrapper */
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            border-radius: 10px;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .form-container {
+            /* Taller aspect ratio for forms */
+            padding-top: 100%; 
+        }
+
+        @media (min-width: 768px) {
+            .form-container {
+                padding-top: 75%; /* Shorter on desktop */
+            }
+        }
+
+        /* --- Floating WhatsApp Button --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Excellence Tuition Center</h1>
+            <p>Empowering Students to Achieve Their Best</p>
+            <a href="#enquiry" class="cta-button">Welcome! </a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">Connect With Us</h2>
+        <div class="links-grid">
+			
+			<a href="https://api.whatsapp.com/send?phone=6369608357"  class="link-card whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <h3>Chat  on Whatsapp</h3>
+            </a>
+		
+            <a href="https://www.instagram.com/freelanceprabhu/?hl=en"  target="_blank" class="link-card instagram">
+                <i class="fab fa-instagram"></i>
+                <h3>Follow on Instagram</h3>
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank" class="link-card facebook">
+                <i class="fab fa-facebook"></i>
+                <h3>Like us on Facebook</h3>
+            </a>
+			
+			 <a href="https://www.google.com/maps/search/Salem%2C+Tamil+Nadu" target="_blank" class="link-card googlemap">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>See Our Location</h3>
+            </a>
+
+            <a href="https://prabhufreelancer.com/" target="_blank" class="link-card website">
+                <i class="fas fa-globe"></i>
+                <h3>Visit Website</h3>
+            </a>
+			
+			
+			<a href="https://forms.gle/PkzfbQyFouFbUQWt7" target="_blank" class="link-card enquiry">
+               <i class="fa fa-question-circle" aria-hidden="true"></i>
+                <h3>Enquiry Form</h3>
+            </a>
+        </div>
+
+       
+
+    </div>
+
+    <a href="https://wa.me/6369608357" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Excellence Tuition Center. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
